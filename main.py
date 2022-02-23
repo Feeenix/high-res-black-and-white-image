@@ -4,10 +4,6 @@ import os
 
 
 
-
-
-
-
 def main():
     pass
     install_package("numpy","pypng")
