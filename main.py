@@ -10,6 +10,11 @@ def main():
     sys.path.append("libraries")
 
 
+    print(sys.argv)
+    if len(sys.argv) > 1:
+        
+
+
 
 
 
