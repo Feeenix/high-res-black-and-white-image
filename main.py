@@ -29,35 +29,10 @@ def main():
     chr(10240+ a[0][b*2+0]*1 + a[1][b*2+0]*2 + a[2][b*2+0]*4 + a[0][b*2+1]*8 + a[1][b*2+1]*16 + a[2][b*2+1]*32 + a[3][b*2+0]*64 + a[3][b*2+1]*128 )
     for b in range(math.ceil(len(a[0])/2))]
     for a in vt_group ])
-    
+
     text = "\n".join(["".join(a) for a in hz_group])
     with open(out_file_, "w",encoding="utf-16") as f:
         f.write(text)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
