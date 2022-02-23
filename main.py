@@ -23,6 +23,14 @@ def main():
 
     bw_im = np.sum(cv2.imread(img_file_),axis=2)>threshold
 
+
+    while len(bw_im)%4:
+        bw_im = np.vstack((bw_im, np.array([False for i in range(len(bw_im[0]))])) )
+
+    while len(bw_im[0])%2:
+        bw_im = np.hstack((bw_im, np.array([[False,] for i in range(len(bw_im))])) )
+
+
     vt_group = np.array([bw_im[i*4:i*4+4] for i in range(math.ceil(len(bw_im)/4))])
 
     hz_group = np.array([[
