@@ -7,7 +7,7 @@ def install_package(*libs):
         for name in libs:
             fileexists=False
             for s in allmodules:
-                if s.find(name) == -1: fileexists = False
+                if s.replace("-","_").find(name.replace("-","_")) == -1: fileexists = False
                 else:
                     fileexists = True
                     print(name,s)
