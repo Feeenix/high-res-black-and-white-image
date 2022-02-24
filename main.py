@@ -39,7 +39,7 @@ def main():
     for a in vt_group ])
 
     text = "\n".join(["".join(a) for a in hz_group])
-    with open(out_file_, "w",encoding="utf-16") as f:
+    with open(out_file_, "w",encoding="utf-8") as f:
         f.write(text)
 
 
