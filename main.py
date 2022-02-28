@@ -11,18 +11,24 @@ def main():
     import numpy as np
     img_file_ = img_file
     out_file_ = out_file
+    threshold_= threshold
     print(img_file_)
     print(sys.argv)
     if len(sys.argv) > 1:
         img_file_ = sys.argv[1]
         if len(sys.argv) > 2:
             out_file_ = sys.argv[2]
+            if len(sys.argv) > 3:
+                threshold_ = int(sys.argv[3])
+
+    if threshold_>=256*3:
+        raise ValueError("threshold must be less than "+str(256*3)+", value given: "+str(threshold_))
 
     if not os.path.isdir(in_dir): os.mkdir(in_dir)
     if not os.path.isdir(out_dir): os.mkdir(out_dir)
 
     # Load the image into a 3d array
-    bw_im = np.sum(cv2.imread(img_file_),axis=2)>threshold
+    bw_im = np.sum(cv2.imread(img_file_),axis=2)>threshold_
 
     # make the height and width a multiple of 4 and 2
     while len(bw_im)%4:
